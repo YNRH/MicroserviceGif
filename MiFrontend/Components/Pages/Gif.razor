@@ -1,0 +1,30 @@
+@using MiFrontend.Services
+@page "/gifs"
+@inject GifService GifService
+
+<h1 class="text-center mb-4">GIFs</h1>
+
+<div class="d-flex flex-wrap justify-content-center">
+    @if (Gifs != null)
+    {
+        @foreach (var gif in Gifs)
+        {
+            <div class="m-2">
+                <img src="@gif.Media[0].Webm.Preview" alt="@gif.Id" style="max-width: 200px; max-height: 200px;" />
+            </div>
+        }
+    }
+    else
+    {
+        <p>Loading...</p>
+    }
+</div>
+
+@code {
+    List<MiFrontend.Models.Gif> Gifs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Gifs = await GifService.GetGifs();
+    }
+}

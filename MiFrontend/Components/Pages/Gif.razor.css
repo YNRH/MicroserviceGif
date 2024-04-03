@@ -1,0 +1,26 @@
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gif-item {
+    margin: 10px;
+}
+
+.gif-image {
+    width: 200px; /* Tamaño deseado para las imágenes */
+    height: auto; /* Mantener la proporción de aspecto */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación de transformación */
+}
+
+.gif-image:hover {
+    transform: scale(1.1); /* Agrandar la imagen al pasar el ratón sobre ella */
+}
