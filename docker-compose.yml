@@ -1,0 +1,22 @@
+version: '3.4'
+
+services: 
+
+    frontend:
+        image: mifrontend
+        build:
+            context: .
+            dockerfile: ./MiFrontend/Dockerfile
+        environment: 
+           - BackendEndpoint=http://backend:8080
+        ports:
+           - "32000:8080"
+        depends_on: 
+           - backend
+    backend:
+        image: mibackend
+        build: 
+            context: .
+            dockerfile: ./MiBackend/Dockerfile
+        ports: 
+           - "32001:8080"

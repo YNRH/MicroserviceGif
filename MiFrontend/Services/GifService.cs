@@ -17,7 +17,7 @@ namespace MiFrontend.Services
 
         public async Task<List<Gif>> GetGifs()
         {
-            return await _httpClient.GetFromJsonAsync<List<Gif>>("http://localhost:5103/gif");
+            return await _httpClient.GetFromJsonAsync<List<Gif>>("http://backend:8080/gif");
         }
     }
 }
